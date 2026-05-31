@@ -440,7 +440,8 @@
         const msgRow = document.createElement('div');
         msgRow.className = 'chat-message-row';
         
-        const timestamp = `[${msg.time}]`;
+        const dateStr = msg.date ? `${msg.date} ` : '';
+        const timestamp = `[${dateStr}${msg.time}]`;
         const senderTag = msg.sender === 'aoba' ? '&lt;あおば&gt;' : `&lt;${msg.sender}&gt;`;
         
         // Escape content newlines
