@@ -249,6 +249,11 @@ main {
   animation: blink 1s steps(1, start) infinite;
 }
 
+.subtitle-text {
+  color: #ff0000;
+  font-weight: bold;
+}
+
 /* Chiptune MIDI Player GUI */
 .midi-player {
   background-color: #000000;
