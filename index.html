@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>avoas.github.io | Digital Space</title>
+  <meta name="description" content="Welcome to the digital workspace and portfolio of avoas. Built with modern aesthetics and clean design.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo" id="site-logo">avoas.github.io</div>
+      <nav aria-label="Main Navigation">
+        <a href="#about" id="nav-about">About</a>
+        <a href="#projects" id="nav-projects">Projects</a>
+        <a href="#contact" id="nav-contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="about">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>Online & Building</span>
+        </div>
+        <h1>
+          Hello, I'm <span>avoas</span>.<br>Welcome to my space.
+        </h1>
+        <p>
+          ここは私のデジタル・ポートフォリオおよび実験場です。
+          アイディアを形にし、最新の技術やデザインを探求したプロジェクトを公開しています。
+        </p>
+        <div class="cta-group">
+          <a href="#projects" class="btn btn-primary" id="cta-explore">プロジェクトを見る</a>
+          <a href="https://github.com/avoas" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="cta-github">
+            <svg style="width:18px;height:18px;margin-right:8px;fill:currentColor;" viewBox="0 0 24 24">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <!-- Features / Projects Grid -->
+      <section class="features" id="projects">
+        <!-- Card 1 -->
+        <article class="feature-card" id="card-creation">
+          <div class="icon-box">
+            <svg style="width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Web Creation</h3>
+          <p>HTML/CSSやJavaScriptを用いた美しく直感的なWebサイト・アプリケーションの構築。</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="feature-card" id="card-design">
+          <div class="icon-box">
+            <svg style="width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/>
+              <path d="M12 6V12L16 14"/>
+            </svg>
+          </div>
+          <h3>Continuous Iteration</h3>
+          <p>無駄のないクリーンなコード設計と、パフォーマンスを重視した開発プロセスの実践。</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="feature-card" id="card-experiments">
+          <div class="icon-box">
+            <svg style="width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Future Experiments</h3>
+          <p>新しいフレームワークやライブラリを取り入れた、実験的プロジェクトの推進。</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <p>&copy; 2026 avoas.github.io. Built with passion.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Add smooth entrance interaction or simple micro-animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.feature-card');
+      
+      // Basic Intersection Observer for scroll-in effects
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>
