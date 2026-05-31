@@ -3,111 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>avoas.github.io | Digital Space</title>
-  <meta name="description" content="Welcome to the digital workspace and portfolio of avoas. Built with modern aesthetics and clean design.">
+  <title>★☆★ AVOASの電脳の館へようこそ ★☆★</title>
+  <meta name="description" content="個人ホームページ「AVOASの電脳の館」です。キリ番報告は掲示板にお願いします！">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+  <!-- CRT Scanlines Filter -->
+  <div id="crt-screen" class="crt-overlay"></div>
+
+  <div class="layout">
     <!-- Header -->
     <header>
-      <div class="logo" id="site-logo">avoas.github.io</div>
-      <nav aria-label="Main Navigation">
-        <a href="#about" id="nav-about">About</a>
-        <a href="#projects" id="nav-projects">Projects</a>
-        <a href="#contact" id="nav-contact">Contact</a>
-      </nav>
+      <div class="wordart">AVOAS's Home Page</div>
+      <p class="blink-text">★★ Welcome to my digital underground space ★★</p>
+      
+      <div class="marquee-container">
+        <div class="marquee-text">
+          【更新情報】 2026/05/31：ホームページを開設しました！ 相互リンク大募集中です！！ キリ番「777」を踏んだ方は掲示板にてお知らせください！
+        </div>
+      </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-      <!-- Hero Section -->
-      <section class="hero" id="about">
-        <div class="badge">
-          <span class="badge-dot"></span>
-          <span>Online & Building</span>
+    <!-- Main Content Area -->
+    <div class="columns">
+      <!-- Sidebar Navigation -->
+      <nav>
+        <div class="nav-title">めにゅー</div>
+        <ul>
+          <li><a href="#welcome">ようこそ</a></li>
+          <li><a href="#profile">自己紹介</a></li>
+          <li><a href="#projects">電子実験室</a></li>
+          <li><a href="#bbs">掲示板 (BBS)</a></li>
+          <li><a href="#links">リンク集</a></li>
+        </ul>
+        <div style="text-align: center; margin-top: 20px;">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'><rect width='88' height='31' fill='%23000' stroke='%2300ff00' stroke-width='2'/><text x='10' y='20' fill='%2300ff00' font-family='monospace' font-size='10' font-weight='bold'>AVOAS NET</text></svg>" alt="AVOAS Banner" style="border:1px solid #00ff00; width:88px; height:31px;">
+          <p style="font-size: 8px; color: #000; margin-top: 5px;">バナー（直リンク推奨）</p>
         </div>
-        <h1>
-          Hello, I'm <span>avoas</span>.<br>Welcome to my space.
-        </h1>
-        <p>
-          ここは私のデジタル・ポートフォリオおよび実験場です。
-          アイディアを形にし、最新の技術やデザインを探求したプロジェクトを公開しています。
-        </p>
-        <div class="cta-group">
-          <a href="#projects" class="btn btn-primary" id="cta-explore">プロジェクトを見る</a>
-          <a href="https://github.com/avoas" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="cta-github">
-            <svg style="width:18px;height:18px;margin-right:8px;fill:currentColor;" viewBox="0 0 24 24">
-              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-            </svg>
-            GitHub
-          </a>
+      </nav>
+
+      <!-- Main Section -->
+      <main>
+        <!-- Under Construction Banner -->
+        <div class="construction-banner">
+          <span class="construction-icon">🚧</span>
+          <div>
+            <div style="font-weight: bold; color: #ffff00; font-size: 14px;">ただいま工事中 (Under Construction)</div>
+            <div style="font-size: 11px; color: #ffffff;">このサイトはNetscape Navigator 4.0以上、解像度800x600で最適化されています。</div>
+          </div>
+          <span class="construction-icon">🚧</span>
         </div>
-      </section>
 
-      <!-- Features / Projects Grid -->
-      <section class="features" id="projects">
-        <!-- Card 1 -->
-        <article class="feature-card" id="card-creation">
-          <div class="icon-box">
-            <svg style="width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
+        <!-- 8-Bit Chiptune Player Widget -->
+        <div class="midi-player" id="player-widget">
+          <span class="midi-disc" id="player-disc">💿</span>
+          <div style="flex-grow: 1;">
+            <div class="midi-title" id="player-title">BGM: Nostalgia_Tune.mid</div>
+            <div class="midi-controls">
+              <button class="midi-btn" id="btn-play">▶ PLAY</button>
+              <button class="midi-btn" id="btn-stop" disabled>■ STOP</button>
+              <button class="midi-btn" id="btn-crt" style="margin-left: auto;">CRT: ON</button>
+            </div>
           </div>
-          <h3>Web Creation</h3>
-          <p>HTML/CSSやJavaScriptを用いた美しく直感的なWebサイト・アプリケーションの構築。</p>
-        </article>
+        </div>
 
-        <!-- Card 2 -->
-        <article class="feature-card" id="card-design">
-          <div class="icon-box">
-            <svg style="width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24">
-              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/>
-              <path d="M12 6V12L16 14"/>
-            </svg>
+        <!-- Welcome Window -->
+        <section class="win-window" id="welcome">
+          <div class="win-titlebar">
+            <span>Welcome.txt - メモ帳</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">_</button>
+              <button class="win-btn">?</button>
+              <button class="win-btn">X</button>
+            </div>
           </div>
-          <h3>Continuous Iteration</h3>
-          <p>無駄のないクリーンなコード設計と、パフォーマンスを重視した開発プロセスの実践。</p>
-        </article>
+          <div class="win-content">
+            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">ごあいさつ</h2>
+            <p>ようこそ、AVOASのホームページへ！</p>
+            <p style="margin-top: 8px;">ここはインターネットの荒波にひっそりと佇む、私の電脳アジトです。Web技術の進歩に逆行し、懐かしき90年代後半のぬくもりを再現してみました。</p>
+            
+            <div style="text-align: center; margin-top: 15px;">
+              <p style="font-size: 11px;">あなたは</p>
+              <div class="counter-box" id="visitor-counter">000000</div>
+              <p style="font-size: 11px;">人目の訪問者です（キリ番踏んだら教えてね）</p>
+            </div>
+          </div>
+        </section>
 
-        <!-- Card 3 -->
-        <article class="feature-card" id="card-experiments">
-          <div class="icon-box">
-            <svg style="width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
+        <!-- Profile Window -->
+        <section class="win-window" id="profile">
+          <div class="win-titlebar">
+            <span>Profile.html - ＩＥ５.０</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">_</button>
+              <button class="win-btn">X</button>
+            </div>
           </div>
-          <h3>Future Experiments</h3>
-          <p>新しいフレームワークやライブラリを取り入れた、実験的プロジェクトの推進。</p>
-        </article>
-      </section>
-    </main>
+          <div class="win-content">
+            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">ぷろふぃーる</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;" border="1" cellpadding="5" bordercolor="#c0c0c0">
+              <tr>
+                <td style="background-color: #f0f0f0; font-weight: bold; width: 30%;">ＨＮ</td>
+                <td>AVOAS（あぼあす）</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f0f0f0; font-weight: bold;">趣味</td>
+                <td>ホームページ作り、MIDI鑑賞、ジャンクPCいじり</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f0f0f0; font-weight: bold;">一言</td>
+                <td>いにしえのインターネット万歳！</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <!-- Projects Window -->
+        <section class="win-window" id="projects">
+          <div class="win-titlebar">
+            <span>Projects.dll - システムエクスプローラ</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">X</button>
+            </div>
+          </div>
+          <div class="win-content">
+            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">電子実験室</h2>
+            <ul>
+              <li><strong>HTML/CSS手打ちサイト</strong> - ホームページビルダーを使わずにメモ帳で作成！</li>
+              <li><strong>Web Audio シンセサイザー</strong> - JavaScriptで8bitサウンドを奏でるおもちゃ。</li>
+              <li><strong>CRTモニター再現装置</strong> - 画面のちらつきと走査線をエミュレートします。</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- BBS Window -->
+        <section class="win-window" id="bbs">
+          <div class="win-titlebar">
+            <span>BBS.exe - 掲示板（足跡を残してね）</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">X</button>
+            </div>
+          </div>
+          <div class="win-content">
+            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">足跡掲示板</h2>
+            
+            <form class="guestbook-form" id="guestbook-form">
+              <div>
+                <label for="gb-name" style="font-size: 11px; font-weight: bold;">お名前：</label>
+                <input type="text" id="gb-name" required placeholder="名無しさん">
+              </div>
+              <div>
+                <label for="gb-msg" style="font-size: 11px; font-weight: bold;">メッセージ：</label>
+                <textarea id="gb-msg" rows="3" required placeholder="こんにちは！"></textarea>
+              </div>
+              <button type="submit" id="gb-submit">送信する</button>
+            </form>
+
+            <div class="guestbook-list" id="guestbook-list">
+              <!-- Entries will be loaded here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Link Window -->
+        <section class="win-window" id="links">
+          <div class="win-titlebar">
+            <span>Links.lnk - お気に入りリンク集</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">X</button>
+            </div>
+          </div>
+          <div class="win-content">
+            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">相互リンク集</h2>
+            <p>※相互リンクは随時募集しております！メール等でお知らせください。</p>
+            <ul style="margin-top: 10px; padding-left: 20px;">
+              <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a> - 開発用のリポジトリ置き場です。</li>
+              <li><a href="https://google.com" target="_blank" rel="noopener">Google</a> - サーチエンジン。ネットサーフィンに必須。</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Badges Row -->
+    <div class="badges-container">
+      <div class="badge-item badge-netscape">Netscape Navigator 4.0 OK</div>
+      <div class="badge-item badge-ie">Internet Explorer 5.0 compatible</div>
+      <div class="badge-item badge-notepad">Made with Notepad</div>
+      <div class="badge-item" style="border-color: #00ff00; color: #00ff00;">HTML 4.01 Verified</div>
+      <div class="badge-item" style="border-color: #ffaa00; color: #ffaa00;">Winamp Ready</div>
+    </div>
 
     <!-- Footer -->
-    <footer id="contact">
-      <p>&copy; 2026 avoas.github.io. Built with passion.</p>
+    <footer>
+      <p>Copyright (C) 1998-2026 AVOAS All Rights Reserved.</p>
     </footer>
   </div>
 
   <script>
-    // Add smooth entrance interaction or simple micro-animations
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = document.querySelectorAll('.feature-card');
-      
-      // Basic Intersection Observer for scroll-in effects
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
+    // ----------------------------------------------------
+    // Visitor Counter implementation
+    // ----------------------------------------------------
+    let count = parseInt(localStorage.getItem('avoas_visits') || '128');
+    count += 1;
+    localStorage.setItem('avoas_visits', count.toString());
+    
+    const formattedCount = String(count).padStart(6, '0');
+    document.getElementById('visitor-counter').textContent = formattedCount;
 
-      cards.forEach(card => {
-        observer.observe(card);
+    // ----------------------------------------------------
+    // Guestbook implementation
+    // ----------------------------------------------------
+    const defaultEntries = [
+      { name: "山田タロウ", msg: "通りすがりの者です。素晴らしいホームページですね！MIDIの選曲がナイスです。相互リンクお願いします！", date: "1998/05/20 14:22" },
+      { name: "るびぃ", msg: "キリ番「100」踏んじゃいました！おめでとうございます！掲示板に足跡残しておきます〜☆", date: "1998/05/18 21:05" }
+    ];
+
+    function loadGuestbook() {
+      const stored = localStorage.getItem('avoas_guestbook');
+      let entries = stored ? JSON.parse(stored) : defaultEntries;
+      const listEl = document.getElementById('guestbook-list');
+      listEl.innerHTML = '';
+      
+      entries.forEach(entry => {
+        const item = document.createElement('div');
+        item.className = 'guestbook-entry';
+        item.innerHTML = `
+          <div class="guestbook-meta">【${entry.name}】 <span style="font-size:10px; color:#808080;">投稿日：${entry.date}</span></div>
+          <div style="margin-top: 4px; color:#000;">${entry.msg}</div>
+        `;
+        listEl.appendChild(item);
       });
+    }
+
+    document.getElementById('guestbook-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameEl = document.getElementById('gb-name');
+      const msgEl = document.getElementById('gb-msg');
+      
+      const stored = localStorage.getItem('avoas_guestbook');
+      let entries = stored ? JSON.parse(stored) : defaultEntries;
+      
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}/${String(now.getMonth()+1).padStart(2,'0')}/${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+      
+      entries.unshift({
+        name: nameEl.value,
+        msg: msgEl.value,
+        date: dateStr
+      });
+      
+      localStorage.setItem('avoas_guestbook', JSON.stringify(entries));
+      nameEl.value = '';
+      msgEl.value = '';
+      loadGuestbook();
+    });
+
+    loadGuestbook();
+
+    // ----------------------------------------------------
+    // CRT Screen toggle
+    // ----------------------------------------------------
+    const crtScreen = document.getElementById('crt-screen');
+    const crtBtn = document.getElementById('btn-crt');
+    crtBtn.addEventListener('click', () => {
+      if (crtScreen.style.display !== 'none') {
+        crtScreen.style.display = 'none';
+        crtBtn.textContent = 'CRT: OFF';
+      } else {
+        crtScreen.style.display = 'block';
+        crtBtn.textContent = 'CRT: ON';
+      }
+    });
+
+    // ----------------------------------------------------
+    // Web Audio Synthesizer (Chiptune Loop)
+    // ----------------------------------------------------
+    let audioCtx = null;
+    let seqInterval = null;
+    let isPlaying = false;
+    let currentStep = 0;
+
+    // Nostalgic retro game melody notes (pitch frequencies)
+    // C major arpeggio and cute progression
+    const melody = [
+      261.63, 329.63, 392.00, 523.25, 349.23, 440.00, 523.25, 698.46,
+      392.00, 493.88, 587.33, 783.99, 523.25, 392.00, 329.63, 261.63
+    ];
+    // Retro noise/snare beat simulation
+    const beat = [
+      true, false, true, false, true, true, false, true,
+      true, false, true, false, true, false, true, true
+    ];
+
+    function startSynthesizer() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      
+      isPlaying = true;
+      document.getElementById('player-disc').classList.add('playing');
+      document.getElementById('btn-play').disabled = true;
+      document.getElementById('btn-stop').disabled = false;
+      
+      currentStep = 0;
+
+      // Play step function
+      function playStep() {
+        if (!isPlaying) return;
+        
+        const now = audioCtx.currentTime;
+        
+        // 1. Synthesize Lead Arpeggio (Triangle Wave)
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(melody[currentStep % melody.length], now);
+        
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        osc.start(now);
+        osc.stop(now + 0.3);
+
+        // 2. Synthesize Retro Drum / Noise Beat (Square Wave low pitch or simple clicks)
+        if (beat[currentStep % beat.length]) {
+          const drum = audioCtx.createOscillator();
+          const drumGain = audioCtx.createGain();
+          drum.type = 'square';
+          drum.frequency.setValueAtTime(currentStep % 4 === 0 ? 80 : 120, now);
+          
+          drumGain.gain.setValueAtTime(0.05, now);
+          drumGain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+          
+          drum.connect(drumGain);
+          drumGain.connect(audioCtx.destination);
+          
+          drum.start(now);
+          drum.stop(now + 0.15);
+        }
+
+        currentStep++;
+      }
+
+      // Schedule at 150ms intervals
+      seqInterval = setInterval(playStep, 180);
+    }
+
+    function stopSynthesizer() {
+      isPlaying = false;
+      if (seqInterval) {
+        clearInterval(seqInterval);
+        seqInterval = null;
+      }
+      document.getElementById('player-disc').classList.remove('playing');
+      document.getElementById('btn-play').disabled = false;
+      document.getElementById('btn-stop').disabled = true;
+    }
+
+    document.getElementById('btn-play').addEventListener('click', () => {
+      // Resume audio context if suspended (browser security)
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      startSynthesizer();
+    });
+
+    document.getElementById('btn-stop').addEventListener('click', () => {
+      stopSynthesizer();
     });
   </script>
 </body>
