@@ -9,9 +9,6 @@
 </head>
 <body>
 
-  <!-- CRT Scanlines Filter -->
-  <div id="crt-screen" class="crt-overlay"></div>
-
   <div class="layout">
     <!-- Header -->
     <header>
@@ -64,7 +61,6 @@
             <div class="midi-controls">
               <button class="midi-btn" id="btn-play">▶ PLAY</button>
               <button class="midi-btn" id="btn-stop" disabled>■ STOP</button>
-              <button class="midi-btn" id="btn-crt" style="margin-left: auto;">CRT: ON</button>
             </div>
           </div>
         </div>
@@ -133,7 +129,6 @@
             <ul>
               <li><strong>HTML/CSS手打ちサイト</strong> - ホームページビルダーを使わずにメモ帳で作成！</li>
               <li><strong>Web Audio シンセサイザー</strong> - JavaScriptで8bitサウンドを奏でるおもちゃ。</li>
-              <li><strong>CRTモニター再現装置</strong> - 画面のちらつきと走査線をエミュレートします。</li>
             </ul>
           </div>
         </section>
@@ -303,21 +298,6 @@
     });
 
     loadGuestbook();
-
-    // ----------------------------------------------------
-    // CRT Screen toggle
-    // ----------------------------------------------------
-    const crtScreen = document.getElementById('crt-screen');
-    const crtBtn = document.getElementById('btn-crt');
-    crtBtn.addEventListener('click', () => {
-      if (crtScreen.style.display !== 'none') {
-        crtScreen.style.display = 'none';
-        crtBtn.textContent = 'CRT: OFF';
-      } else {
-        crtScreen.style.display = 'block';
-        crtBtn.textContent = 'CRT: ON';
-      }
-    });
 
     // ----------------------------------------------------
     // Web Audio Synthesizer (Chiptune Loop)
