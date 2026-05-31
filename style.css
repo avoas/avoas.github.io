@@ -409,6 +409,78 @@ footer {
   font-size: 11px;
 }
 
+/* Retro Chat Client Interface */
+.chat-client {
+  border: 2px inset #ffffff;
+  background-color: #c0c0c0;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+  box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #fff;
+}
+
+.chat-client-titlebar {
+  background-color: #000080;
+  color: #ffffff;
+  padding: 2px 6px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.chat-display {
+  background-color: #ffffff;
+  border: 2px inset #ffffff;
+  height: 250px;
+  overflow-y: scroll;
+  padding: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #fff;
+}
+
+.chat-input-simulator {
+  display: flex;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.chat-message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  word-break: break-all;
+}
+
+.chat-time {
+  color: #808080;
+  font-weight: normal;
+  flex-shrink: 0;
+}
+
+.chat-sender {
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.chat-sender.sender-aoba {
+  color: #0000ff; /* Classic blue for self */
+}
+
+.chat-sender.sender-u {
+  color: #ff0000; /* Classic red/pink for partner */
+}
+
+.chat-content {
+  color: #000000;
+  white-space: pre-wrap;
+}
+
 /* Responsiveness */
 @media (max-width: 600px) {
   .columns {

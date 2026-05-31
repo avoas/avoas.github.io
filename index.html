@@ -35,6 +35,7 @@
           <li><a href="#profile">自己紹介</a></li>
           <li><a href="#projects">電子実験室</a></li>
           <li><a href="#bbs">掲示板 (BBS)</a></li>
+          <li><a href="#chat-logs">対話ログ (ICQ)</a></li>
           <li><a href="#links">リンク集</a></li>
         </ul>
         <div style="text-align: center; margin-top: 20px;">
@@ -162,6 +163,47 @@
 
             <div class="guestbook-list" id="guestbook-list">
               <!-- Entries will be loaded here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Chat Logs Window -->
+        <section class="win-window" id="chat-logs">
+          <div class="win-titlebar">
+            <span>ICQ.exe - 対話ログ</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">_</button>
+              <button class="win-btn">?</button>
+              <button class="win-btn">X</button>
+            </div>
+          </div>
+          <div class="win-content">
+            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">対話ログの表示</h2>
+            <p>過去のチャット履歴をレトロなメッセンジャー画面で閲覧できます。</p>
+            
+            <div class="chat-selector-container" style="margin-top: 10px; margin-bottom: 10px; display: flex; gap: 10px; align-items: center;">
+              <label for="chat-select" style="font-size: 11px; font-weight: bold; color: #000;">ログ選択：</label>
+              <select id="chat-select" style="padding: 2px 6px; border: 2px inset #fff; background-color: #fff; font-family: inherit;">
+                <option value="chats/260428_01.json">u さんとのチャット (2026/04/28)</option>
+              </select>
+            </div>
+
+            <!-- Retro Chat Client Interface -->
+            <div class="chat-client">
+              <div class="chat-client-titlebar">
+                <span>ICQ - Active Session: u</span>
+              </div>
+              <div class="chat-display" id="chat-display">
+                <p style="color: #808080; font-size: 11px; text-align: center;">ログを読み込んでいます...</p>
+              </div>
+              <div class="chat-input-simulator">
+                <input type="text" disabled placeholder="相手はオフライン、またはメッセージ送信不可です" style="flex-grow: 1; padding: 4px; border: 2px inset #fff; font-size: 11px;">
+                <button disabled style="padding: 2px 10px; border: 2px outset #fff; font-size: 11px; font-weight: bold; background-color: #c0c0c0; color: #000;">送信</button>
+              </div>
+            </div>
+            
+            <!-- Metadata display -->
+            <div class="chat-metadata-box" id="chat-metadata" style="margin-top: 10px; font-size: 11px; color: #555; border-top: 1px dashed #808080; padding-top: 5px;">
             </div>
           </div>
         </section>
@@ -376,6 +418,72 @@
     document.getElementById('btn-stop').addEventListener('click', () => {
       stopSynthesizer();
     });
+
+    // ----------------------------------------------------
+    // Retro Chat Log Loader
+    // ----------------------------------------------------
+    const chatSelect = document.getElementById('chat-select');
+    const chatDisplay = document.getElementById('chat-display');
+    const chatMetadata = document.getElementById('chat-metadata');
+
+    async function loadChatLog(filePath) {
+      try {
+        chatDisplay.innerHTML = '<p style="color: #808080; font-size: 11px; text-align: center;">ログをロード中...</p>';
+        const response = await fetch(filePath);
+        if (!response.ok) {
+          throw new Error('ファイルの読み込みに失敗しました');
+        }
+        const data = await response.json();
+        renderChatLog(data);
+      } catch (err) {
+        console.error(err);
+        chatDisplay.innerHTML = `<p style="color: #ff0000; font-size: 11px; text-align: center;">エラー: ログの読み込みに失敗しました。<br>${err.message}</p>`;
+      }
+    }
+
+    function renderChatLog(data) {
+      // Render metadata
+      chatMetadata.innerHTML = `
+        <strong>お相手:</strong> ${data.partner} &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>マッチ日:</strong> ${data.matched_date} &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>ステータス:</strong> ${data.status}
+      `;
+
+      // Render messages in IRC/classic format
+      chatDisplay.innerHTML = '';
+      if (!data.messages || data.messages.length === 0) {
+        chatDisplay.innerHTML = '<p style="color: #808080; font-size: 11px; text-align: center;">メッセージはありません。</p>';
+        return;
+      }
+
+      data.messages.forEach(msg => {
+        const msgRow = document.createElement('div');
+        msgRow.className = 'chat-message-row';
+        
+        const timestamp = `[${msg.time}]`;
+        const senderTag = msg.sender === 'aoba' ? '&lt;あおば&gt;' : `&lt;${msg.sender}&gt;`;
+        
+        // Escape content newlines
+        const formattedContent = msg.content.replace(/\n/g, '<br>');
+        
+        msgRow.innerHTML = `
+          <span class="chat-time">${timestamp}</span>
+          <span class="chat-sender sender-${msg.sender}">${senderTag}</span>
+          <span class="chat-content">${formattedContent}</span>
+        `;
+        chatDisplay.appendChild(msgRow);
+      });
+      
+      // Auto scroll to bottom
+      chatDisplay.scrollTop = chatDisplay.scrollHeight;
+    }
+
+    chatSelect.addEventListener('change', (e) => {
+      loadChatLog(e.target.value);
+    });
+
+    // Initial load
+    loadChatLog(chatSelect.value);
   </script>
 </body>
 </html>
