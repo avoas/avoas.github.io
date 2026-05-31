@@ -438,21 +438,24 @@ footer {
 }
 
 .chat-message-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  margin-bottom: 10px;
   word-break: break-all;
+}
+
+.chat-message-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .chat-time {
   color: #808080;
   font-weight: normal;
-  flex-shrink: 0;
+  font-size: 11px;
 }
 
 .chat-sender {
   font-weight: bold;
-  flex-shrink: 0;
 }
 
 .chat-sender.sender-aoba {
@@ -465,6 +468,8 @@ footer {
 
 .chat-content {
   color: #000000;
+  margin-top: 2px;
+  padding-left: 8px;
   white-space: pre-wrap;
 }
 

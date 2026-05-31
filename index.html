@@ -448,9 +448,11 @@
         const formattedContent = msg.content.replace(/\n/g, '<br>');
         
         msgRow.innerHTML = `
-          <span class="chat-time">${timestamp}</span>
-          <span class="chat-sender sender-${msg.sender}">${senderTag}</span>
-          <span class="chat-content">${formattedContent}</span>
+          <div class="chat-message-header">
+            <span class="chat-time">${timestamp}</span>
+            <span class="chat-sender sender-${msg.sender}">${senderTag}</span>
+          </div>
+          <div class="chat-content">${formattedContent}</div>
         `;
         chatDisplay.appendChild(msgRow);
       });
