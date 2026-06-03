@@ -37,6 +37,27 @@
       margin-bottom: 4px;
       font-size: 13px;
     }
+    /* Table styling for markdown tables */
+    #thought-markdown-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+    #thought-markdown-content th, #thought-markdown-content td {
+      border: 1px solid #808080;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    #thought-markdown-content th {
+      background-color: #000080;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    #thought-markdown-content tr:nth-child(even) {
+      background-color: #f0f0f0;
+    }
   </style>
   <!-- Load marked.js for Markdown parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

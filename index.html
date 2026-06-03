@@ -7,27 +7,57 @@
   <title>陰者の婚活</title>
   <meta name="description" content="個人ホームページ「陰者の婚活」です。中高不登校、社交不安障害持ちの社不がマチアプで絶望する記録。">
   <link rel="stylesheet" href="style.css">
+
   <style>
     /* Styling for markdown elements inside the Notepad content window */
     #updates-markdown-content h1 {
-      font-size: 14px;
+      font-size: 18px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #808080;
+      color: #000080;
+      padding-bottom: 4px;
+    }
+    #updates-markdown-content h2 {
+      font-size: 15px;
+      margin-top: 18px;
       margin-bottom: 8px;
       border-bottom: 1px solid #808080;
       color: #000080;
       padding-bottom: 2px;
     }
     #updates-markdown-content p {
-      margin-bottom: 8px;
-      font-size: 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
     }
     #updates-markdown-content ul {
       margin-left: 20px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       list-style-type: square;
     }
     #updates-markdown-content li {
       margin-bottom: 4px;
+      font-size: 13px;
+    }
+    /* Table styling for markdown tables */
+    #updates-markdown-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 15px;
       font-size: 12px;
+    }
+    #updates-markdown-content th, #updates-markdown-content td {
+      border: 1px solid #808080;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    #updates-markdown-content th {
+      background-color: #000080;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    #updates-markdown-content tr:nth-child(even) {
+      background-color: #f0f0f0;
     }
   </style>
   <!-- Load marked.js for Markdown parsing -->
@@ -145,7 +175,7 @@
           </div>
           <div class="win-content">
             <!-- Content Area (White sheet of paper style) -->
-            <div id="updates-markdown-content" style="max-height: 150px; overflow-y: auto; background-color: #fff; padding: 5px 10px; font-family: monospace; font-size: 12px; color: #000; line-height: 1.6;">
+            <div id="updates-markdown-content" style="max-height: 150px; overflow-y: auto; background-color: #fff; padding: 5px 10px; font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
               <p style="color: #808080; text-align: center;">読み込み中...</p>
             </div>
           </div>
