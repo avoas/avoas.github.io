@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>経験値ログ - 陰者の婚活</title>
   <meta name="description" content="「陰者の婚活」の経験値ログページです。婚活に関する痛い出来事やその分析、対策（実験）を記録しています。">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style.css">
   <style>
     /* Styling for markdown elements inside the Notepad content window */
     #exp-markdown-content h1 {
@@ -124,7 +124,7 @@
     async function loadExperiences() {
       const expMarkdownContent = document.getElementById('exp-markdown-content');
       try {
-        const response = await fetch('exps/exps.md');
+        const response = await fetch('content/exps.md');
         if (!response.ok) {
           throw new Error('経験値ログファイルの読み込みに失敗しました');
         }
@@ -146,7 +146,7 @@
     // Initial load
     loadExperiences();
   </script>
-  <script src="menu.js"></script>
+  <script src="assets/menu.js"></script>
 </body>
 
 </html>

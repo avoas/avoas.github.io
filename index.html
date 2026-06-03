@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>陰者の婚活</title>
   <meta name="description" content="個人ホームページ「陰者の婚活」です。中高不登校、社交不安障害持ちの社不がマチアプで絶望する記録。">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style.css">
 
   <style>
     /* Styling for markdown elements inside the Notepad content window */
-    #updates-markdown-content h1 {
+    #updates-markdown-content h1, #welcome-message h1, #spec-markdown-content h1 {
       font-size: 18px;
       margin-bottom: 12px;
       border-bottom: 2px solid #808080;
       color: #000080;
       padding-bottom: 4px;
     }
-    #updates-markdown-content h2 {
+    #updates-markdown-content h2, #welcome-message h2, #spec-markdown-content h2 {
       font-size: 15px;
       margin-top: 18px;
       margin-bottom: 8px;
@@ -25,38 +25,38 @@
       color: #000080;
       padding-bottom: 2px;
     }
-    #updates-markdown-content p {
+    #updates-markdown-content p, #welcome-message p, #spec-markdown-content p {
       margin-bottom: 10px;
       font-size: 13px;
     }
-    #updates-markdown-content ul {
+    #updates-markdown-content ul, #welcome-message ul, #spec-markdown-content ul {
       margin-left: 20px;
       margin-bottom: 12px;
       list-style-type: square;
     }
-    #updates-markdown-content li {
+    #updates-markdown-content li, #welcome-message li, #spec-markdown-content li {
       margin-bottom: 4px;
       font-size: 13px;
     }
     /* Table styling for markdown tables */
-    #updates-markdown-content table {
+    #updates-markdown-content table, #welcome-message table, #spec-markdown-content table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
       margin-bottom: 15px;
       font-size: 12px;
     }
-    #updates-markdown-content th, #updates-markdown-content td {
+    #updates-markdown-content th, #updates-markdown-content td, #welcome-message th, #welcome-message td, #spec-markdown-content th, #spec-markdown-content td {
       border: 1px solid #808080;
       padding: 6px 10px;
       text-align: left;
     }
-    #updates-markdown-content th {
+    #updates-markdown-content th, #welcome-message th, #spec-markdown-content th {
       background-color: #000080;
       color: #ffffff;
       font-weight: bold;
     }
-    #updates-markdown-content tr:nth-child(even) {
+    #updates-markdown-content tr:nth-child(even), #welcome-message tr:nth-child(even), #spec-markdown-content tr:nth-child(even) {
       background-color: #f0f0f0;
     }
   </style>
@@ -98,8 +98,7 @@
             </div>
           </div>
           <div class="win-content">
-            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">ごあいさつ</h2>
-            <div id="welcome-message">
+            <div id="welcome-message" style="font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
               <p>読み込み中...</p>
             </div>
 
@@ -122,42 +121,8 @@
             </div>
           </div>
           <div class="win-content">
-            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">スペック (Spec)</h2>
-            <div style="max-height: 320px; overflow-y: auto; border: 2px inset #fff; background-color: #fff;">
-              <table style="width: 100%; border-collapse: collapse;" border="1" cellpadding="5" bordercolor="#c0c0c0">
-                <thead>
-                  <tr style="background-color: #000080; color: #ffffff;">
-                    <th
-                      style="width: 40%; text-align: left; padding: 4px 8px; position: sticky; top: 0; background-color: #000080;">
-                      項目</th>
-                    <th
-                      style="text-align: left; padding: 4px 8px; position: sticky; top: 0; background-color: #000080;">値
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="background-color: #f0f0f0; font-weight: bold;">ニックネーム</td>
-                    <td>あお</td>
-                  </tr>
-                  <tr>
-                    <td style="background-color: #f0f0f0; font-weight: bold;">年齢</td>
-                    <td>26歳</td>
-                  </tr>
-                  <tr>
-                    <td style="background-color: #f0f0f0; font-weight: bold;">血液型</td>
-                    <td>A型</td>
-                  </tr>
-                  <tr>
-                    <td style="background-color: #f0f0f0; font-weight: bold;">身長</td>
-                    <td>171 cm</td>
-                  </tr>
-                  <tr>
-                    <td style="background-color: #f0f0f0; font-weight: bold;">体重</td>
-                    <td>59.2 kg</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div id="spec-markdown-content" style="max-height: 350px; overflow-y: auto; background-color: #fff; padding: 5px 10px;">
+              <p style="color: #808080; text-align: center;">読み込み中...</p>
             </div>
           </div>
         </section>
@@ -202,15 +167,20 @@
     // ----------------------------------------------------
     // Welcome message loader
     // ----------------------------------------------------
-    fetch('welcome.html')
+    fetch('content/welcome.md')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.text();
       })
-      .then(html => {
-        document.getElementById('welcome-message').innerHTML = html;
+      .then(text => {
+        const contentDiv = document.getElementById('welcome-message');
+        if (typeof marked !== 'undefined') {
+          contentDiv.innerHTML = marked.parse(text);
+        } else {
+          contentDiv.innerHTML = `<pre style="white-space: pre-wrap;">${text}</pre>`;
+        }
       })
       .catch(error => {
         console.error('Error loading welcome content:', error);
@@ -230,7 +200,7 @@
     // ----------------------------------------------------
     // Growth (Updates) log loader
     // ----------------------------------------------------
-    fetch('update.md')
+    fetch('content/update.md')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -250,8 +220,31 @@
         document.getElementById('updates-markdown-content').innerHTML = '<p>成長履歴の読み込みに失敗しました。</p>';
       });
 
+    // ----------------------------------------------------
+    // Spec log loader
+    // ----------------------------------------------------
+    fetch('content/spec.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(text => {
+        const contentDiv = document.getElementById('spec-markdown-content');
+        if (typeof marked !== 'undefined') {
+          contentDiv.innerHTML = marked.parse(text);
+        } else {
+          contentDiv.innerHTML = `<pre style="white-space: pre-wrap;">${text}</pre>`;
+        }
+      })
+      .catch(error => {
+        console.error('Error loading spec content:', error);
+        document.getElementById('spec-markdown-content').innerHTML = '<p>スペックの読み込みに失敗しました。</p>';
+      });
+
   </script>
-  <script src="menu.js"></script>
+  <script src="assets/menu.js"></script>
 </body>
 
 </html>

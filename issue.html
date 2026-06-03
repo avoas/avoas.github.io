@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>思考ログ - 陰者の婚活</title>
   <meta name="description" content="「陰者の婚活」の思考ログページです。日々の雑感や婚活における思考プロセスのメモ書きを公開しています。">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style.css">
   <style>
     /* Styling for markdown elements inside the Notepad content window */
     #thought-markdown-content h1 {
@@ -124,7 +124,7 @@
     async function loadThoughtLog() {
       const contentDiv = document.getElementById('thought-markdown-content');
       try {
-        const response = await fetch('issue/issue.md');
+        const response = await fetch('content/thought.md');
         if (!response.ok) {
           throw new Error('ファイルの読み込みに失敗しました');
         }
@@ -146,7 +146,7 @@
     // Initial load
     loadThoughtLog();
   </script>
-  <script src="menu.js"></script>
+  <script src="assets/menu.js"></script>
 </body>
 
 </html>
