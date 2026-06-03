@@ -7,6 +7,31 @@
   <title>陰者の婚活</title>
   <meta name="description" content="個人ホームページ「陰者の婚活」です。中高不登校、社交不安障害持ちの社不がマチアプで絶望する記録。">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styling for markdown elements inside the Notepad content window */
+    #updates-markdown-content h1 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #808080;
+      color: #000080;
+      padding-bottom: 2px;
+    }
+    #updates-markdown-content p {
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    #updates-markdown-content ul {
+      margin-left: 20px;
+      margin-bottom: 8px;
+      list-style-type: square;
+    }
+    #updates-markdown-content li {
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+  </style>
+  <!-- Load marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -119,19 +144,9 @@
             </div>
           </div>
           <div class="win-content">
-            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">更新履歴 (Updates)</h2>
-            <div
-              style="max-height: 150px; overflow-y: auto; border: 2px inset #fff; background-color: #fff; padding: 10px; font-family: monospace; font-size: 12px; color: #000;">
-              <ul style="list-style-type: square; margin-left: 20px; line-height: 1.6;">
-                <li style="margin-bottom: 8px;">
-                  <span style="color: #000080; font-weight: bold;">2026/06/03</span><br>
-                  スペック表をシンプルに整理、ごあいさつ文を更新しました。
-                </li>
-                <li style="margin-bottom: 8px;">
-                  <span style="color: #000080; font-weight: bold;">2026/05/31</span><br>
-                  ホームページを開設しました！
-                </li>
-              </ul>
+            <!-- Content Area (White sheet of paper style) -->
+            <div id="updates-markdown-content" style="max-height: 150px; overflow-y: auto; background-color: #fff; padding: 5px 10px; font-family: monospace; font-size: 12px; color: #000; line-height: 1.6;">
+              <p style="color: #808080; text-align: center;">読み込み中...</p>
             </div>
           </div>
         </section>
@@ -181,6 +196,29 @@
 
     const formattedCount = String(count).padStart(6, '0');
     document.getElementById('visitor-counter').textContent = formattedCount;
+
+    // ----------------------------------------------------
+    // Growth (Updates) log loader
+    // ----------------------------------------------------
+    fetch('update.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(text => {
+        const contentDiv = document.getElementById('updates-markdown-content');
+        if (typeof marked !== 'undefined') {
+          contentDiv.innerHTML = marked.parse(text);
+        } else {
+          contentDiv.innerHTML = `<pre style="white-space: pre-wrap;">${text}</pre>`;
+        }
+      })
+      .catch(error => {
+        console.error('Error loading updates content:', error);
+        document.getElementById('updates-markdown-content').innerHTML = '<p>成長履歴の読み込みに失敗しました。</p>';
+      });
 
   </script>
   <script src="menu.js"></script>
