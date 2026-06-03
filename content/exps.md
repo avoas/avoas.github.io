@@ -16,21 +16,19 @@
 | 項目 | 内容 |
 |---|---|
 | Count | 5 |
-| Intensity | ★8 |
-| Caused by | Personalization |
-| Pain | 金銭抜きで性的関係を持ったことがない |
+| Caused by | Mind-Reading |
+| Insecurity | 容姿？ |
 | Last Occurred | 2026/06/02 |
 
-
+好みのタイプの人を見ると、まず相手の性生活を想像してどんな男となら寝るんだろう、自分とは絶対寝ないよなと落ち込む。今までどんな人と性的関係を持ったんだろうとか、どういう男ならいいんだろうとか、色々と想像して、そして傷つく。
 
 ## ISSUE 001 - 性生活の話
 
 | 項目 | 内容 |
 |---|---|
 | Count | 5 |
-| Intensity | ★8 |
 | Caused by | Personalization |
-| Pain | 金銭抜きで性的関係を持ったことがない |
+| Insecurity | 金銭抜きで性的関係を持ったことがない |
 | Last Occurred | 2026/06/02 |
 
 後輩とか友達とかからそういう話を聞くとすごい嫌な気持ちになる。
