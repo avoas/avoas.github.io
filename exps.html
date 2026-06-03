@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>経験値ログ - 陰者の婚活</title>
+  <meta name="description" content="「陰者の婚活」の経験値ログページです。婚活に関する痛い出来事やその分析、対策（実験）を記録しています。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styling for markdown elements inside the Notepad content window */
+    #exp-markdown-content h2 {
+      font-size: 15px;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #808080;
+      color: #000080;
+      padding-bottom: 2px;
+    }
+    #exp-markdown-content h2:first-of-type {
+      margin-top: 0;
+    }
+    #exp-markdown-content p {
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    #exp-markdown-content ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+      list-style-type: square;
+    }
+    #exp-markdown-content li {
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+    
+    /* Table row hover and selected styling */
+    #exp-list-body tr:hover {
+      background-color: #dfdfdf;
+    }
+    #exp-list-body tr.selected {
+      background-color: #000080;
+      color: #ffffff !important;
+    }
+    #exp-list-body tr.selected td {
+      color: #ffffff !important;
+    }
+    
+    /* Metadata badge styling */
+    .meta-badge {
+      display: inline-block;
+      background-color: #dfdfdf;
+      border: 1px inset #fff;
+      padding: 1px 6px;
+      font-size: 11px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      color: #000;
+    }
+  </style>
+  <!-- Load marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+
+  <div class="layout">
+    <!-- Header -->
+    <header>
+      <div class="wordart">陰者の婚活</div>
+      <p class="subtitle-text">~~ 中高不登校、社交不安障害持ちの社不がマチアプに挑んだログ ~~</p>
+
+      <div class="marquee-container">
+        <div class="marquee-text">
+          【更新情報】 2026/06/03：スペック表をシンプルに整理し、ごあいさつ文を更新しました！
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="columns">
+      <!-- Sidebar Navigation -->
+      <nav>
+        <div class="nav-title">MENU</div>
+        <ul>
+          <li><a href="index.html">ようこそ</a></li>
+          <li><a href="chats.html">対話ログ (ICQ)</a></li>
+          <li><a href="exps.html">経験値ログ (Exp)</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Section -->
+      <main>
+        <!-- Exp List Window -->
+        <section class="win-window" id="exp-list-window">
+          <div class="win-titlebar">
+            <span>ExpExplorer.exe - 経験値一覧</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">_</button>
+              <button class="win-btn">?</button>
+              <button class="win-btn">X</button>
+            </div>
+          </div>
+          <div class="win-content">
+            <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">経験値リストの選択</h2>
+            <p style="margin-bottom: 10px; font-size: 12px; color: #555;">
+              これまでに経験した「嫌だった出来事」や、その分析・対策の記録です。クリックすると詳細を表示します。
+            </p>
+            
+            <div style="overflow-x: auto; border: 2px inset #fff; background-color: #fff; max-height: 180px;">
+              <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 12px; color: #000;" border="1" cellpadding="5" bordercolor="#c0c0c0">
+                <thead>
+                  <tr style="background-color: #000080; color: #ffffff; text-align: left;">
+                    <th style="padding: 4px 8px; font-weight: bold;">ID</th>
+                    <th style="padding: 4px 8px; font-weight: bold;">タイトル</th>
+                    <th style="padding: 4px 8px; font-weight: bold;">精神ダメージ (1-10)</th>
+                    <th style="padding: 4px 8px; font-weight: bold;">ステータス</th>
+                    <th style="padding: 4px 8px; font-weight: bold;">最終発生日</th>
+                  </tr>
+                </thead>
+                <tbody id="exp-list-body">
+                  <tr>
+                    <td colspan="5" style="text-align: center; padding: 15px; color: #808080;">ログを読み込んでいます...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Exp Detail Window -->
+        <section class="win-window" id="exp-detail-window">
+          <div class="win-titlebar">
+            <span>Notepad.exe - 経験値詳細</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">_</button>
+              <button class="win-btn">?</button>
+              <button class="win-btn">X</button>
+            </div>
+          </div>
+          <div class="win-content">
+            <!-- Metadata Area (Win95 grey panel style) -->
+            <div id="exp-metadata-box" style="background-color: #c0c0c0; border: 2px inset #fff; padding: 10px; margin-bottom: 15px; font-size: 12px; color: #000; display: none;">
+              <!-- Dynamically populated -->
+            </div>
+
+            <!-- Content Area (White sheet of paper style) -->
+            <div id="exp-markdown-content" style="max-height: 400px; overflow-y: auto; border: 2px inset #fff; background-color: #fff; padding: 15px; font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
+              <p style="color: #808080; text-align: center;">上のリストからログを選択してください。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Badges Row -->
+        <div class="badges-container">
+          <div class="badge-item badge-netscape">Netscape Navigator 4.0 OK</div>
+          <div class="badge-item badge-ie">Internet Explorer 5.0 compatible</div>
+          <div class="badge-item badge-notepad">Made with Notepad</div>
+          <div class="badge-item" style="border-color: #00ff00; color: #00ff00;">HTML 4.01 Verified</div>
+          <div class="badge-item" style="border-color: #ffaa00; color: #ffaa00;">Winamp Ready</div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <p>Copyright (C) 2026 AVOAS All Rights Reserved.</p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const expListBody = document.getElementById('exp-list-body');
+    const expMetadataBox = document.getElementById('exp-metadata-box');
+    const expMarkdownContent = document.getElementById('exp-markdown-content');
+
+    let experiments = [];
+
+    // Simple YAML front matter parser
+    function parseFrontMatter(rawText) {
+      const parts = rawText.split('---');
+      if (parts.length < 3) {
+        return { metadata: {}, body: rawText };
+      }
+      const yamlSection = parts[1];
+      const body = parts.slice(2).join('---');
+      const metadata = {};
+      
+      const lines = yamlSection.split('\n');
+      let currentKey = null;
+      
+      for (let line of lines) {
+        line = line.trim();
+        if (!line) continue;
+        
+        // List items
+        if (line.startsWith('-') && currentKey) {
+          const val = line.substring(1).trim();
+          if (!Array.isArray(metadata[currentKey])) {
+            metadata[currentKey] = [];
+          }
+          metadata[currentKey].push(val);
+          continue;
+        }
+        
+        const colonIdx = line.indexOf(':');
+        if (colonIdx !== -1) {
+          const key = line.substring(0, colonIdx).trim();
+          const val = line.substring(colonIdx + 1).trim();
+          if (val === '') {
+            currentKey = key;
+            metadata[key] = [];
+          } else {
+            currentKey = key;
+            if (val.startsWith('[') && val.endsWith(']')) {
+              metadata[key] = val.substring(1, val.length - 1).split(',').map(s => s.trim());
+            } else {
+              metadata[key] = val;
+            }
+          }
+        }
+      }
+      return { metadata, body };
+    }
+
+    async function loadExperimentsIndex() {
+      try {
+        const response = await fetch('exps.json');
+        if (!response.ok) {
+          throw new Error('インデックスファイルの読み込みに失敗しました');
+        }
+        experiments = await response.json();
+        renderExperimentsList();
+        
+        // Auto-load first experiment if available
+        if (experiments.length > 0) {
+          selectExperiment(experiments[0].id, experiments[0].path);
+        }
+      } catch (err) {
+        console.error(err);
+        expListBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #ff0000; padding: 15px;">エラー: 目次のロードに失敗しました。<br>${err.message}</td></tr>`;
+      }
+    }
+
+    function renderExperimentsList() {
+      expListBody.innerHTML = '';
+      experiments.forEach(exp => {
+        const row = document.createElement('tr');
+        row.dataset.id = exp.id;
+        row.dataset.path = exp.path;
+        row.style.cursor = 'pointer';
+        
+        row.innerHTML = `
+          <td style="padding: 4px 8px; font-weight: bold;">${exp.id}</td>
+          <td style="padding: 4px 8px; color: #0000ff; text-decoration: underline;">${exp.title}</td>
+          <td style="padding: 4px 8px;">★ ${exp.intensity}</td>
+          <td style="padding: 4px 8px; font-weight: bold; color: ${exp.status === 'active' ? '#008000' : '#808080'};">${exp.status.toUpperCase()}</td>
+          <td style="padding: 4px 8px;">${exp.last_occurred}</td>
+        `;
+        
+        row.addEventListener('click', () => {
+          selectExperiment(exp.id, exp.path);
+        });
+        
+        expListBody.appendChild(row);
+      });
+    }
+
+    async function selectExperiment(id, path) {
+      // Highlight selected row
+      Array.from(expListBody.children).forEach(row => {
+        if (row.dataset.id === id) {
+          row.classList.add('selected');
+        } else {
+          row.classList.remove('selected');
+        }
+      });
+
+      try {
+        expMarkdownContent.innerHTML = '<p style="color: #808080; text-align: center;">ログを読み込んでいます...</p>';
+        expMetadataBox.style.display = 'none';
+
+        const response = await fetch(path);
+        if (!response.ok) {
+          throw new Error('詳細ファイルの読み込みに失敗しました');
+        }
+        const rawText = await response.text();
+        const { metadata, body } = parseFrontMatter(rawText);
+
+        // Render Metadata Box
+        renderMetadata(metadata);
+
+        // Render Markdown content (marked is loaded globally)
+        if (typeof marked !== 'undefined') {
+          expMarkdownContent.innerHTML = marked.parse(body);
+        } else {
+          // Fallback if marked didn't load
+          expMarkdownContent.innerHTML = `<pre style="white-space: pre-wrap;">${body}</pre>`;
+        }
+      } catch (err) {
+        console.error(err);
+        expMarkdownContent.innerHTML = `<p style="color: #ff0000; text-align: center;">エラー: ログの読み込みに失敗しました。<br>${err.message}</p>`;
+      }
+    }
+
+    function renderMetadata(meta) {
+      expMetadataBox.style.display = 'block';
+      
+      const categoriesHtml = (meta.category || []).map(cat => `<span class="meta-badge">${cat}</span>`).join('');
+      const distortionsHtml = (meta.distortions || []).map(dist => `<span class="meta-badge" style="background-color: #ffcccc; color: #a00;">${dist}</span>`).join('');
+      
+      expMetadataBox.innerHTML = `
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 15px;">
+          <div><strong>ID:</strong></div>
+          <div>${meta.id || 'N/A'}</div>
+          
+          <div><strong>タイトル:</strong></div>
+          <div><span style="font-weight: bold; font-size: 13px;">${meta.title || 'N/A'}</span></div>
+          
+          <div><strong>主要な苦痛 (Core Pain):</strong></div>
+          <div style="color: #a00; font-weight: bold;">${meta.core_pain || 'N/A'}</div>
+          
+          <div><strong>カテゴリー:</strong></div>
+          <div>${categoriesHtml || 'N/A'}</div>
+          
+          <div><strong>認知の歪み:</strong></div>
+          <div>${distortionsHtml || 'なし'}</div>
+          
+          <div><strong>状況・発生日:</strong></div>
+          <div>最終発生: ${meta.last_occurred || 'N/A'} &nbsp;&nbsp;|&nbsp;&nbsp; 回数: ${meta.count || 'N/A'}回</div>
+        </div>
+      `;
+    }
+
+    // Initial load
+    loadExperimentsIndex();
+  </script>
+</body>
+
+</html>

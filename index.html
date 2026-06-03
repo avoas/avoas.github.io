@@ -30,24 +30,14 @@
       <nav>
         <div class="nav-title">MENU</div>
         <ul>
-          <li><a href="#welcome">ようこそ</a></li>
-          <li><a href="#profile">自己紹介</a></li>
+          <li><a href="index.html">ようこそ</a></li>
           <li><a href="chats.html">対話ログ (ICQ)</a></li>
-          <li><a href="#updates">アップデート</a></li>
+          <li><a href="exps.html">経験値ログ (Exp)</a></li>
         </ul>
       </nav>
 
       <!-- Main Section -->
       <main>
-        <!-- Under Construction Banner -->
-        <div class="construction-banner">
-          <span class="construction-icon">🚧</span>
-          <div>
-            <div style="font-weight: bold; color: #ffff00; font-size: 14px;">ただいま工事中 (Under Construction)</div>
-            <div style="font-size: 11px; color: #ffffff;">このサイトはNetscape Navigator 4.0以上、解像度800x600で最適化されています。</div>
-          </div>
-          <span class="construction-icon">🚧</span>
-        </div>
 
         <!-- Welcome Window -->
         <section class="win-window" id="welcome">
@@ -138,7 +128,8 @@
           </div>
           <div class="win-content">
             <h2 style="font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #808080;">更新履歴 (Updates)</h2>
-            <div style="max-height: 150px; overflow-y: auto; border: 2px inset #fff; background-color: #fff; padding: 10px; font-family: monospace; font-size: 12px; color: #000;">
+            <div
+              style="max-height: 150px; overflow-y: auto; border: 2px inset #fff; background-color: #fff; padding: 10px; font-family: monospace; font-size: 12px; color: #000;">
               <ul style="list-style-type: square; margin-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">
                   <span style="color: #000080; font-weight: bold;">2026/06/03</span><br>
@@ -170,18 +161,18 @@
     </div>
   </div>
 
-    <script>
-      // ----------------------------------------------------
-      // Visitor Counter implementation
-      // ----------------------------------------------------
-      let count = parseInt(localStorage.getItem('avoas_visits') || '128');
-      count += 1;
-      localStorage.setItem('avoas_visits', count.toString());
+  <script>
+    // ----------------------------------------------------
+    // Visitor Counter implementation
+    // ----------------------------------------------------
+    let count = parseInt(localStorage.getItem('avoas_visits') || '128');
+    count += 1;
+    localStorage.setItem('avoas_visits', count.toString());
 
-      const formattedCount = String(count).padStart(6, '0');
-      document.getElementById('visitor-counter').textContent = formattedCount;
+    const formattedCount = String(count).padStart(6, '0');
+    document.getElementById('visitor-counter').textContent = formattedCount;
 
-    </script>
+  </script>
 </body>
 
 </html>
