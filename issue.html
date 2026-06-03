@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>経験値ログ - 陰者の婚活</title>
-  <meta name="description" content="「陰者の婚活」の経験値ログページです。婚活に関する痛い出来事やその分析、対策（実験）を記録しています。">
+  <title>思考ログ - 陰者の婚活</title>
+  <meta name="description" content="「陰者の婚活」の思考ログページです。日々の雑感や婚活における思考プロセスのメモ書きを公開しています。">
   <link rel="stylesheet" href="style.css">
   <style>
     /* Styling for markdown elements inside the Notepad content window */
-    #exp-markdown-content h1 {
+    #thought-markdown-content h1 {
       font-size: 18px;
       margin-bottom: 12px;
       border-bottom: 2px solid #808080;
       color: #000080;
       padding-bottom: 4px;
     }
-    #exp-markdown-content h2 {
+    #thought-markdown-content h2 {
       font-size: 15px;
       margin-top: 18px;
       margin-bottom: 8px;
@@ -24,39 +24,18 @@
       color: #000080;
       padding-bottom: 2px;
     }
-    #exp-markdown-content p {
+    #thought-markdown-content p {
       margin-bottom: 10px;
       font-size: 13px;
     }
-    #exp-markdown-content ul {
+    #thought-markdown-content ul {
       margin-left: 20px;
       margin-bottom: 12px;
       list-style-type: square;
     }
-    #exp-markdown-content li {
+    #thought-markdown-content li {
       margin-bottom: 4px;
       font-size: 13px;
-    }
-    /* Table styling for markdown tables */
-    #exp-markdown-content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      font-size: 12px;
-    }
-    #exp-markdown-content th, #exp-markdown-content td {
-      border: 1px solid #808080;
-      padding: 6px 10px;
-      text-align: left;
-    }
-    #exp-markdown-content th {
-      background-color: #000080;
-      color: #ffffff;
-      font-weight: bold;
-    }
-    #exp-markdown-content tr:nth-child(even) {
-      background-color: #f0f0f0;
     }
   </style>
   <!-- Load marked.js for Markdown parsing -->
@@ -85,10 +64,10 @@
 
       <!-- Main Section -->
       <main>
-        <!-- Exp Notepad Window -->
-        <section class="win-window" id="exp-notepad-window">
+        <!-- Thought Log Window -->
+        <section class="win-window" id="thought-log-window">
           <div class="win-titlebar">
-            <span>Exps.txt - メモ帳</span>
+            <span>Thought.txt - メモ帳</span>
             <div class="win-title-buttons">
               <button class="win-btn">_</button>
               <button class="win-btn">?</button>
@@ -97,7 +76,7 @@
           </div>
           <div class="win-content">
             <!-- Content Area (White sheet of paper style) -->
-            <div id="exp-markdown-content" style="max-height: 500px; overflow-y: auto; border: 2px inset #fff; background-color: #fff; padding: 15px; font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
+            <div id="thought-markdown-content" style="max-height: 500px; overflow-y: auto; border: 2px inset #fff; background-color: #fff; padding: 15px; font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
               <p style="color: #808080; text-align: center;">ログを読み込んでいます...</p>
             </div>
           </div>
@@ -121,30 +100,30 @@
   </div>
 
   <script>
-    async function loadExperiences() {
-      const expMarkdownContent = document.getElementById('exp-markdown-content');
+    async function loadThoughtLog() {
+      const contentDiv = document.getElementById('thought-markdown-content');
       try {
-        const response = await fetch('exps/exps.md');
+        const response = await fetch('issue/issue.md');
         if (!response.ok) {
-          throw new Error('経験値ログファイルの読み込みに失敗しました');
+          throw new Error('ファイルの読み込みに失敗しました');
         }
         const text = await response.text();
-
+        
         // Render Markdown content (marked is loaded globally)
         if (typeof marked !== 'undefined') {
-          expMarkdownContent.innerHTML = marked.parse(text);
+          contentDiv.innerHTML = marked.parse(text);
         } else {
           // Fallback if marked didn't load
-          expMarkdownContent.innerHTML = `<pre style="white-space: pre-wrap;">${text}</pre>`;
+          contentDiv.innerHTML = `<pre style="white-space: pre-wrap;">${text}</pre>`;
         }
       } catch (err) {
         console.error(err);
-        expMarkdownContent.innerHTML = `<p style="color: #ff0000; text-align: center;">エラー: 経験値ログの読み込みに失敗しました。<br>${err.message}</p>`;
+        contentDiv.innerHTML = `<p style="color: #ff0000; text-align: center;">エラー: 思考ログの読み込みに失敗しました。<br>${err.message}</p>`;
       }
     }
 
     // Initial load
-    loadExperiences();
+    loadThoughtLog();
   </script>
   <script src="menu.js"></script>
 </body>

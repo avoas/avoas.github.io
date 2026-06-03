@@ -26,15 +26,8 @@
 
     <!-- Main Content Area -->
     <div class="columns">
-      <!-- Sidebar Navigation -->
-      <nav>
-        <div class="nav-title">MENU</div>
-        <ul>
-          <li><a href="index.html">ようこそ</a></li>
-          <li><a href="chats.html">対話ログ (ICQ)</a></li>
-          <li><a href="exps.html">経験値ログ (Exp)</a></li>
-        </ul>
-      </nav>
+      <!-- Sidebar Navigation (Modularized component) -->
+      <sidebar-navigation></sidebar-navigation>
 
       <!-- Main Section -->
       <main>
@@ -171,6 +164,7 @@
     // Initial load
     loadChatLog(chatSelect.value);
   </script>
+  <script src="menu.js"></script>
 </body>
 
 </html>
