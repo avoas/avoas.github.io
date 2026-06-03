@@ -1,40 +1,91 @@
 /* Retro 90s Geocities Style Sheet */
 
 @keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes rainbow {
-  0% { color: #ff0000; }
-  14% { color: #ff7f00; }
-  28% { color: #ffff00; }
-  42% { color: #00ff00; }
-  56% { color: #0000ff; }
-  70% { color: #4b0082; }
-  84% { color: #8b00ff; }
-  100% { color: #ff0000; }
+  0% {
+    color: #ff0000;
+  }
+
+  14% {
+    color: #ff7f00;
+  }
+
+  28% {
+    color: #ffff00;
+  }
+
+  42% {
+    color: #00ff00;
+  }
+
+  56% {
+    color: #0000ff;
+  }
+
+  70% {
+    color: #4b0082;
+  }
+
+  84% {
+    color: #8b00ff;
+  }
+
+  100% {
+    color: #ff0000;
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 :root {
-  --retro-bg: #000080; /* Classic Win95 Navy / Black */
-  --retro-window: #c0c0c0; /* Win95 Grey */
+  --retro-bg: #000080;
+  /* Classic Win95 Navy / Black */
+  --retro-window: #c0c0c0;
+  /* Win95 Grey */
   --retro-window-dark: #808080;
   --retro-window-light: #ffffff;
   --retro-text: #ffffff;
@@ -49,13 +100,14 @@
 body {
   background-color: #000000;
   /* Retro space star background */
-  background-image: 
-    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+  background-image:
+    radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px);
   background-size: 550px 550px, 350px 350px, 250px 250px;
   background-position: 0 0, 40px 60px, 130px 270px;
-  color: #00ff00; /* Lime green terminal text */
+  color: #00ff00;
+  /* Lime green terminal text */
   font-family: "MS PGothic", "ＭＳ Ｐゴシック", "Courier New", Courier, monospace;
   font-size: 14px;
   line-height: 1.4;
@@ -67,10 +119,12 @@ body {
   width: 16px;
   height: 16px;
 }
+
 ::-webkit-scrollbar-track {
   background: #dfdfdf;
   box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #fff;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #c0c0c0;
   border: 2px solid;
@@ -81,7 +135,8 @@ body {
 .layout {
   max-width: 900px;
   margin: 0 auto;
-  border: 4px ridge #ff00ff; /* Neon border */
+  border: 4px ridge #ff00ff;
+  /* Neon border */
   background-color: rgba(0, 0, 0, 0.85);
   padding: 15px;
 }
@@ -183,7 +238,7 @@ main {
   background-color: #c0c0c0;
   color: #000;
   margin-bottom: 20px;
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .win-titlebar {
@@ -327,7 +382,8 @@ main {
   font-weight: bold;
 }
 
-.guestbook-form input, .guestbook-form textarea {
+.guestbook-form input,
+.guestbook-form textarea {
   width: 100%;
   padding: 4px;
   margin-bottom: 8px;
@@ -371,9 +427,20 @@ main {
   user-select: none;
 }
 
-.badge-netscape { border-color: #0000ff; color: #00ffff; }
-.badge-ie { border-color: #ff00ff; color: #ff00ff; }
-.badge-notepad { border-color: #ffff00; color: #ffff00; }
+.badge-netscape {
+  border-color: #0000ff;
+  color: #00ffff;
+}
+
+.badge-ie {
+  border-color: #ff00ff;
+  color: #ff00ff;
+}
+
+.badge-notepad {
+  border-color: #ffff00;
+  color: #ffff00;
+}
 
 footer {
   text-align: center;
@@ -447,11 +514,13 @@ footer {
 }
 
 .chat-sender.sender-aoba {
-  color: #0000ff; /* Classic blue for self */
+  color: #0000ff;
+  /* Classic blue for self */
 }
 
 .chat-sender.sender-u {
-  color: #ff0000; /* Classic red/pink for partner */
+  color: #ff0000;
+  /* Classic red/pink for partner */
 }
 
 .chat-content {
@@ -466,9 +535,8 @@ footer {
   .columns {
     flex-direction: column;
   }
+
   nav {
     width: 100%;
   }
 }
-
-

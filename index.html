@@ -10,14 +10,21 @@
 
   <style>
     /* Styling for markdown elements inside the Notepad content window */
-    #updates-markdown-content h1, #welcome-message h1, #spec-markdown-content h1 {
+    #updates-markdown-content h1,
+    #welcome-message h1,
+    #spec-markdown-content h1,
+    #kpi-markdown-content h1 {
       font-size: 18px;
       margin-bottom: 12px;
       border-bottom: 2px solid #808080;
       color: #000080;
       padding-bottom: 4px;
     }
-    #updates-markdown-content h2, #welcome-message h2, #spec-markdown-content h2 {
+
+    #updates-markdown-content h2,
+    #welcome-message h2,
+    #spec-markdown-content h2,
+    #kpi-markdown-content h2 {
       font-size: 15px;
       margin-top: 18px;
       margin-bottom: 8px;
@@ -25,38 +32,70 @@
       color: #000080;
       padding-bottom: 2px;
     }
-    #updates-markdown-content p, #welcome-message p, #spec-markdown-content p {
+
+    #updates-markdown-content p,
+    #welcome-message p,
+    #spec-markdown-content p,
+    #kpi-markdown-content p {
       margin-bottom: 10px;
       font-size: 13px;
     }
-    #updates-markdown-content ul, #welcome-message ul, #spec-markdown-content ul {
+
+    #updates-markdown-content ul,
+    #welcome-message ul,
+    #spec-markdown-content ul,
+    #kpi-markdown-content ul {
       margin-left: 20px;
       margin-bottom: 12px;
       list-style-type: square;
     }
-    #updates-markdown-content li, #welcome-message li, #spec-markdown-content li {
+
+    #updates-markdown-content li,
+    #welcome-message li,
+    #spec-markdown-content li,
+    #kpi-markdown-content li {
       margin-bottom: 4px;
       font-size: 13px;
     }
+
     /* Table styling for markdown tables */
-    #updates-markdown-content table, #welcome-message table, #spec-markdown-content table {
+    #updates-markdown-content table,
+    #welcome-message table,
+    #spec-markdown-content table,
+    #kpi-markdown-content table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
       margin-bottom: 15px;
       font-size: 12px;
     }
-    #updates-markdown-content th, #updates-markdown-content td, #welcome-message th, #welcome-message td, #spec-markdown-content th, #spec-markdown-content td {
+
+    #updates-markdown-content th,
+    #updates-markdown-content td,
+    #welcome-message th,
+    #welcome-message td,
+    #spec-markdown-content th,
+    #spec-markdown-content td,
+    #kpi-markdown-content th,
+    #kpi-markdown-content td {
       border: 1px solid #808080;
       padding: 6px 10px;
       text-align: left;
     }
-    #updates-markdown-content th, #welcome-message th, #spec-markdown-content th {
+
+    #updates-markdown-content th,
+    #welcome-message th,
+    #spec-markdown-content th,
+    #kpi-markdown-content th {
       background-color: #000080;
       color: #ffffff;
       font-weight: bold;
     }
-    #updates-markdown-content tr:nth-child(even), #welcome-message tr:nth-child(even), #spec-markdown-content tr:nth-child(even) {
+
+    #updates-markdown-content tr:nth-child(even),
+    #welcome-message tr:nth-child(even),
+    #spec-markdown-content tr:nth-child(even),
+    #kpi-markdown-content tr:nth-child(even) {
       background-color: #f0f0f0;
     }
   </style>
@@ -110,6 +149,53 @@
           </div>
         </section>
 
+        <!-- KPI Window -->
+        <section class="win-window" id="kpi">
+          <div class="win-titlebar">
+            <span>KPI.txt - メモ帳</span>
+            <div class="win-title-buttons">
+              <button class="win-btn">_</button>
+              <button class="win-btn">?</button>
+              <button class="win-btn">X</button>
+            </div>
+          </div>
+          <div class="win-content">
+            <div id="kpi-markdown-content" style="background-color: #fff; padding: 5px 10px; font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
+              <p style="color: #808080; text-align: center;">読み込み中...</p>
+            </div>
+
+            <!-- Experience Indicator -->
+            <div style="margin-top: 15px; border-top: 1px dashed #808080; padding-top: 10px;">
+              <p style="font-size: 12px; font-weight: bold; color: #000080; margin-bottom: 5px;">EXP</p>
+              <div
+                style="display: flex; height: 18px; background-color: #c0c0c0; border: 2px solid; border-color: #808080 #ffffff #ffffff #808080; padding: 1px; gap: 1px;">
+                <div style="flex: 1; background-color: #000080;"></div>
+                <div style="flex: 1; background-color: #000080;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+                <div style="flex: 1; background-color: transparent;"></div>
+              </div>
+              <p style="font-size: 11px; text-align: right; margin-top: 4px; font-family: monospace;">2 / 20 <a
+                  href="exps.html" style="color: #0000ff; text-decoration: underline;">ISSUES</a></p>
+            </div>
+          </div>
+        </section>
+
         <!-- Profile Window -->
         <section class="win-window" id="profile">
           <div class="win-titlebar">
@@ -140,7 +226,8 @@
           </div>
           <div class="win-content">
             <!-- Content Area (White sheet of paper style) -->
-            <div id="updates-markdown-content" style="background-color: #fff; padding: 5px 10px; font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
+            <div id="updates-markdown-content"
+              style="background-color: #fff; padding: 5px 10px; font-family: monospace; font-size: 13px; color: #000; line-height: 1.6;">
               <p style="color: #808080; text-align: center;">読み込み中...</p>
             </div>
           </div>
@@ -241,6 +328,29 @@
       .catch(error => {
         console.error('Error loading spec content:', error);
         document.getElementById('spec-markdown-content').innerHTML = '<p>スペックの読み込みに失敗しました。</p>';
+      });
+
+    // ----------------------------------------------------
+    // KPI log loader
+    // ----------------------------------------------------
+    fetch('content/kpi.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(text => {
+        const contentDiv = document.getElementById('kpi-markdown-content');
+        if (typeof marked !== 'undefined') {
+          contentDiv.innerHTML = marked.parse(text);
+        } else {
+          contentDiv.innerHTML = `<pre style="white-space: pre-wrap;">${text}</pre>`;
+        }
+      })
+      .catch(error => {
+        console.error('Error loading KPI content:', error);
+        document.getElementById('kpi-markdown-content').innerHTML = '<p>KPIの読み込みに失敗しました。</p>';
       });
 
   </script>
